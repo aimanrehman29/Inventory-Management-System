@@ -1,6 +1,6 @@
 # Inventory-Management-System
 
-✅ Features
+#✅ Features
 Add Products – Add products of type Electronics, Grocery, or Clothing to the inventory.
 
 Sell Products – Sell products and automatically update stock levels.
@@ -15,7 +15,7 @@ Load Inventory – Load inventory from a saved JSON file.
 
 Product Types – Supports three product types: Electronics, Grocery, and Clothing.
 
-✅ Technology Used
+#✅ Technology Used
 Python – The main language used to build the system.
 
 pytest – Testing framework used to validate functionalities.
