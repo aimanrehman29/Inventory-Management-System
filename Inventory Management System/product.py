@@ -1,5 +1,7 @@
 from abc import ABC, abstractmethod
 import datetime
+from exceptions import InsufficientStockError, ProductAlreadyExistsError
+
 
 class Product(ABC):
     def __init__(self, product_id, name, price, quantity_in_stock):
@@ -36,10 +38,11 @@ class Electronics(Product):
     def restock(self,amount):
         self._quantity_in_stock += amount
 
-    def sell(self,quantity):
-        if quantity > self ._quantity_in_stock:
-            raise ValueError("Not enough stock to sell, Thank you")
-        self._quantity_in_stock -=quantity
+    
+    def sell(self, quantity):
+        if quantity > self._quantity_in_stock:
+            raise InsufficientStockError("Not enough stock to sell.") 
+        self._quantity_in_stock -= quantity
 
     def __str__(self):
        return f"Electronics - {self._name}, Brand: {self.brand}, Warranty: {self.warranty_years} years, Price: {self._price}, Stock: {self._quantity_in_stock}"
